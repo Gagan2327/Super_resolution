@@ -1,0 +1,34 @@
+# Project Overview: Image Super Resolution using OpenCV + Deep Learning
+
+This project demonstrates how to enhance low-resolution images using deep learning-based super resolution models (EDSR and LapSRN) with OpenCV's `dnn_superres` module.
+
+### 🔧 Workflow Summary:
+
+1. **Import Modules:**  
+   Use OpenCV and `dnn_superres` for super resolution tasks.
+
+2. **Initialize Super Resolution Engine:**  
+   Create an instance of `DnnSuperResImpl_create()` to handle the model.
+
+3. **Load Pretrained Model (.pb):**  
+   Load EDSR (4x) or LapSRN (8x) model using `readModel()` and set it using `setModel()`.
+
+4. **(Optional) Enable CUDA:**  
+   If GPU is available, set backend and target to CUDA for faster inference.
+
+5. **Load Input Image:**  
+   Read your low-resolution image using `cv2.imread()`.
+
+6. **Upscale Image:**  
+   Use `sr.upsample(image)` to generate the high-resolution output and save it.
+
+7. **Compare with Traditional Method:**  
+   Perform bicubic interpolation using `cv2.resize()` and save for comparison.
+
+### 📊 Outcome:
+- Deep models like EDSR and LapSRN produce clearer, high-quality results.
+- Bicubic interpolation increases size but lacks sharpness and detail.
+
+Models Used:
+- 🔸 EDSR (Enhanced Deep Super Resolution) - 4x
+
